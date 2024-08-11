@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="mw6 center pa3 sans-serif">
+    <a href="{% url 'index' %}">Home</a>
+    {% for s in stores %}
+    <div class="pa2 mb3 striped--near-white">
+        <div class="pl2">
+            <a href="{% url 'store_detail' s.storeid %}">Store {{ s.name }}</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
